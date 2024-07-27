@@ -19,7 +19,7 @@ logging.getLogger('openai').setLevel(logging.DEBUG)
 ##### 기능 구현 함수 #####
 def STT(audio):
     # 파일 저장
-    filename='lab/realchatgpt/chapter03/input.mp3'
+    filename='/mount/src/voicebott/input.mp3'
     audio.export(filename, format="mp3")
     # 음원 파일 열기
     audio_file = open(filename, "rb")
@@ -37,7 +37,7 @@ def ask_gpt(prompt, model):
 
 def TTS(response):
     # gTTS 를 활용하여 음성 파일 생성
-    filename = "lab/realchatgpt/chapter03/output.mp3"
+    filename = "/mount/src/voicebott/output.mp3"
     tts = gTTS(text=response,lang="ko")
     tts.save(filename)
 
